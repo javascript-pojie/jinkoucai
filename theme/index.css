@@ -8728,7 +8728,7 @@
     font-size: 18px;
     vertical-align: middle; }
   .el-menu-item.is-active {
-    color: #009688; }
+    background: #009688!important; }
     .el-menu-item.is-active i {
       color: inherit; }
 

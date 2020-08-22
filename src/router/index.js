@@ -8,7 +8,16 @@ export default new Router({
       {
           path: '/',
           name: 'layout',
-          component: resolve => require(['@/components/layout'], resolve)
+          component: resolve => require(['@/components/layout'], resolve),
+          children:[{
+              path: '/banner',
+              name: 'banner',
+              component: resolve => require(['@/components/banner/banner'], resolve)
+          },{
+              path: '/banner/add',
+              name: 'addbanner',
+              component: resolve => require(['@/components/banner/addbanner'], resolve)
+          }]
       },
       {
           path: '/login',

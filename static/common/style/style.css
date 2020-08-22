@@ -80,6 +80,10 @@ s, i, em {
 .cursor{
     cursor: pointer;
 }
+.card-title{
+    font-size: 18px;
+    font-weight: bold;
+}
 .marginleft20px {
     margin-left: 20px !important;;
 }
