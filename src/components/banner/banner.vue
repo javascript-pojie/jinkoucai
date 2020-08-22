@@ -24,7 +24,7 @@
                 </el-table-column>
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
-                        <el-button size="mini" @click="$router.push('/banner/add?type=edit')">编辑</el-button>
+                        <el-button size="mini" @click="edit(scope.row)">编辑</el-button>
                         <el-button size="mini" type="danger" @click="onDelete(scope.$index,scope.row)">删除</el-button>
                     </template>
                 </el-table-column>
@@ -53,6 +53,18 @@
                         this.getData();
                     }
                 })
+            },
+            edit(r){
+                this.$router.push({
+                    path: '/banner/add',
+                    query:{
+                        type:'edit',
+                        title: r.title,
+                        desc1: r.desc1,
+                        pic: r.pic,
+                        link: r.link,
+                        id: r.id
+                    }})
             },
             getData(){
                 this.get('/edu-admin/banner/list').then(r=>{

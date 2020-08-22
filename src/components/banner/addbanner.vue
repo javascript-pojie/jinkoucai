@@ -2,7 +2,7 @@
     <div class="container">
         <el-card class="box-card">
             <div slot="header" class="clearfix">
-                <span class="card-title">添加新banner</span>
+                <span class="card-title">{{edit?'修改banner':'添加新banner'}}</span>
                 <el-button @click="$router.go(-1)" style="float: right; padding: 3px 0" type="text">返回</el-button>
             </div>
             <div>
@@ -30,7 +30,7 @@
                         </el-upload>
                     </el-form-item>
                     <el-form-item>
-                        <el-button type="primary" @click="onSubmit">添加</el-button>
+                        <el-button type="primary" @click="onSubmit">{{edit?'保存':'添加'}}</el-button>
                     </el-form-item>
                 </el-form>
             </div>
@@ -50,11 +50,19 @@
                     pic: '',
                     link:''
                 },
-                fileList: []
+                fileList: [],
+                edit:false
             }
         },
         created(){
-
+            let query = this.$route.query
+            if(query.type === 'edit'){
+                this.edit = true
+                this.form = query
+                this.fileList.push({
+                    url:this.IMGURL+query.pic
+                })
+            }
         },
         methods:{
             upSuccess(file){
@@ -66,8 +74,10 @@
             onSubmit(){
                 let data = this.form
                 this.post('/edu-admin/banner/save',data).then(r=>{
+                    let msg = this.edit?'保存成功':'添加成功'
                     if(r.data.code === 1){
-                        this.$message.success('添加成功');
+                        this.$message.success(msg);
+                        this.$router.go(-1)
                     }
                 }).catch(e=>{
                     this.$message.error(r.data.msg);
