@@ -5,13 +5,14 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import '../theme/index.css'
-import {fetchGet, fetchPost} from "./http/http";
+import {fetchGet, fetchPost} from "./http/http"
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-Vue.prototype.post = fetchPost;
-Vue.prototype.get = fetchGet;
+Vue.prototype.post = fetchPost
+Vue.prototype.get = fetchGet
+Vue.prototype.IMGURL = process.env.API_DOWNLOAD
 
 /* eslint-disable no-new */
 new Vue({

@@ -20,24 +20,23 @@
             </el-header>
             <el-aside class="aside">
                 <el-menu
+                        :default-active="'/'+this.$route.path.split('/')[1]"
                         @select="handleSelect"
                         active-text-color="#ffffff"
                         background-color="#20222A"
                         class="el-menu-vertical-demo"
-                        default-active="2"
+                        :router="true"
                         text-color="#fff"
                         style="border: 0">
-                    <el-submenu index="1">
-                        <template slot="title">
-                            <i class="el-icon-location"></i>
-                            <span>导航一</span>
-                        </template>
-                        <el-menu-item :class="menuActive == '1-1'?'active':''" index="1-1">选项1</el-menu-item>
-                        <el-menu-item index="1-2">选项2</el-menu-item>
-                    </el-submenu>
+                    <el-menu-item index="/banner">
+                        <i class="el-icon-guide"></i>
+                        <span slot="title">首页banner管理</span>
+                    </el-menu-item>
                 </el-menu>
             </el-aside>
-            <el-main class="main">main</el-main>
+            <el-main class="main">
+                <router-view/>
+            </el-main>
         </el-container>
     </div>
 </template>
@@ -49,6 +48,9 @@
             return {
                 menuActive: ""
             }
+        },
+        created(){
+
         },
         methods: {
             handleSelect(index) {
