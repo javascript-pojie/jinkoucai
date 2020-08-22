@@ -2,7 +2,7 @@
     <div class="container">
         <el-container>
             <el-header class="header">
-                <div class="title">美诵语文管理运营系统</div>
+                <div class="title">美诵语文APP运营系统</div>
                 <div class="user">
                     <el-popover
                             placement="top-start"
@@ -26,7 +26,7 @@
                         class="el-menu-vertical-demo"
                         default-active="2"
                         text-color="#fff"
-                        style="width: 300px">
+                        style="border: 0">
                     <el-submenu index="1">
                         <template slot="title">
                             <i class="el-icon-location"></i>
@@ -59,10 +59,6 @@
 </script>
 
 <style scoped>
-    .aside, .main {
-        background: #ccc;
-    }
-
     .header {
         width: 100%;
         height: 50px !important;
@@ -92,6 +88,7 @@
         right: 0;
         bottom: 0;
         flex: 1;
+        background: #f2f2f2;
     }
 
     .title {
@@ -102,6 +99,7 @@
         color: #ffffff;
         text-align: center;
         letter-spacing: 2px;
+        font-size: 16px;
     }
 
     .out-login {

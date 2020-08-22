@@ -22,7 +22,6 @@ ul, ol {
 input {
     padding-top: 0;
     padding-bottom: 0;
-    font-family: "SimSun", "宋体";
 }
 
 select, input {
@@ -82,9 +81,17 @@ s, i, em {
     cursor: pointer;
 }
 .marginleft20px {
-    margin-left: 20px;
+    margin-left: 20px !important;;
 }
 
 .marginright20px {
-    margin-right: 20px;
+    margin-right: 20px !important;;
+}
+
+.margintop20px {
+    margin-top: 20px !important;;
+}
+
+.marginbottom20px {
+    margin-bottom: 20px !important;
 }
