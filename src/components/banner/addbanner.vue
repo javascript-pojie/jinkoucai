@@ -6,7 +6,7 @@
                 <el-button @click="$router.go(-1)" style="float: right; padding: 3px 0" type="text">返回</el-button>
             </div>
             <div>
-                <el-form ref="form" :model="form" label-width="80px" style="width: 300px">
+                <el-form ref="form" :model="form" label-width="80px" style="width: 350px">
                     <el-form-item label="标题">
                         <el-input placeholder="请输入标题" v-model="form.title"></el-input>
                     </el-form-item>

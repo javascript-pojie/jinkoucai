@@ -12,6 +12,7 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.prototype.post = fetchPost
 Vue.prototype.get = fetchGet
+Vue.prototype.URL = process.env.API_ROOT
 Vue.prototype.IMGURL = process.env.API_DOWNLOAD
 
 /* eslint-disable no-new */

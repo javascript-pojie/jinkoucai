@@ -33,6 +33,14 @@ export default new Router({
               path: '/materialclass/add',
               name: 'addmaterialclass',
               component: resolve => require(['@/components/material/addmaterialclass'], resolve)
+          },{
+              path: '/material',
+              name: 'material',
+              component: resolve => require(['@/components/material/material'], resolve)
+          },{
+              path: '/material/add',
+              name: 'addmaterial',
+              component: resolve => require(['@/components/material/addmaterial'], resolve)
           }]
       },
       {

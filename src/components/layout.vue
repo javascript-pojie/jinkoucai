@@ -42,7 +42,7 @@
                             <span>素材管理</span>
                         </template>
                         <el-menu-item index="/materialclass">素材分类</el-menu-item>
-                        <el-menu-item index="/materiallist">素材列表</el-menu-item>
+                        <el-menu-item index="/material">素材列表</el-menu-item>
                     </el-submenu>
                 </el-menu>
             </el-aside>
