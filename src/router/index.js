@@ -17,6 +17,22 @@ export default new Router({
               path: '/banner/add',
               name: 'addbanner',
               component: resolve => require(['@/components/banner/addbanner'], resolve)
+          },{
+              path: '/agent',
+              name: 'agent',
+              component: resolve => require(['@/components/agent/agentlist'], resolve)
+          },{
+              path: '/agent/add',
+              name: 'addagent',
+              component: resolve => require(['@/components/agent/addagent'], resolve)
+          },{
+              path: '/materialclass',
+              name: 'materialclass',
+              component: resolve => require(['@/components/material/materialclass'], resolve)
+          },{
+              path: '/materialclass/add',
+              name: 'addmaterialclass',
+              component: resolve => require(['@/components/material/addmaterialclass'], resolve)
           }]
       },
       {

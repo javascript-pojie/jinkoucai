@@ -32,6 +32,18 @@
                         <i class="el-icon-guide"></i>
                         <span slot="title">首页banner管理</span>
                     </el-menu-item>
+                    <el-menu-item index="/agent">
+                        <i class="el-icon-guide"></i>
+                        <span slot="title">区域代理商管理</span>
+                    </el-menu-item>
+                    <el-submenu index="1">
+                        <template slot="title">
+                            <i class="el-icon-location"></i>
+                            <span>素材管理</span>
+                        </template>
+                        <el-menu-item index="/materialclass">素材分类</el-menu-item>
+                        <el-menu-item index="/materiallist">素材列表</el-menu-item>
+                    </el-submenu>
                 </el-menu>
             </el-aside>
             <el-main class="main">

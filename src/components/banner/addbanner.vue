@@ -80,7 +80,7 @@
                         this.$router.go(-1)
                     }
                 }).catch(e=>{
-                    this.$message.error(r.data.msg);
+                    this.$message.error(e);
                 })
             }
         }
