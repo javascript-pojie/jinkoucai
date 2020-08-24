@@ -11,19 +11,19 @@
                 <el-table-column prop="id" label="ID" align="center">
 
                 </el-table-column>
-                <el-table-column prop="area" label="地区" align="center">
+                <el-table-column prop="areaCode" label="地区" align="center">
 
                 </el-table-column>
-                <el-table-column prop="company" label="公司名称" align="center">
+                <el-table-column prop="gsmc" label="公司名称" align="center">
 
                 </el-table-column>
-                <el-table-column prop="contacts" label="代理人名称" align="center">
+                <el-table-column prop="dlr" label="代理人名称" align="center">
 
                 </el-table-column>
-                <el-table-column prop="tel" label="联系方式" align="center">
+                <el-table-column prop="lxfs" label="联系方式" align="center">
 
                 </el-table-column>
-                <el-table-column prop="scale" label="提成比例" align="center">
+                <el-table-column prop="fcbl" label="提成比例" align="center">
 
                 </el-table-column>
                 <el-table-column label="操作" align="center">
@@ -43,13 +43,36 @@
         data(){
             return{
                 tableData:[{
-                    id:1,
-                    area:'荆门',
-                    company:'公司名称',
-                    contacts:'联系人',
-                    tel:'14736710397',
-                    scale:'10%'
+                    areaCode:'',
+                    gsmc:'',
+                    dlr:'',
+                    lxfs:'',
+                    fcbl:''
                 }]
+            }
+        },
+        created(){
+            this.getData()
+        },
+        methods:{
+            getData(){
+                this.post('/edu-admin/agent/list',{curpage:1}).then(r=>{
+                    if(r.data.code === 1){
+                        this.tableData = r.data.data.records
+                    }
+                })
+            },
+            onDelete(i,r){
+                this.post('/edu-admin/agent/delete',{ids:[r.id]}).then(r=>{
+                    if(r.data.code === 1){
+                        this.$message.success('删除成功')
+                        this.getData()
+                    }else{
+                        this.$message.error(r.data.msg)
+                    }
+                }).catch(e=>{
+                    this.$message.error('删除失败'+e)
+                })
             }
         }
     }
