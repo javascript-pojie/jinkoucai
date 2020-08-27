@@ -34,6 +34,8 @@
 </template>
 
 <script>
+    import area from '../../assets/js/allarea'
+
     export default {
         name: "addagent",
         data(){
@@ -45,16 +47,15 @@
                     lxfs:'',
                     fcbl:''
                 },
-                areaList:[]
+                areaList: area
             }
         },
-        created() {
-            this.post('/edu-admin/area/list',{curpage:1}).then(r=>{
-                console.log(r)
-            })
+        created(){
+
         },
         methods:{
             onSubmit(){
+                this.form.areaCode = this.form.areaCode.slice(-1)[0]
                 this.post('/edu-admin/agent/save',this.form).then(r=>{
                     if(r.data.code === 1){
                         this.$message.success('添加成功')

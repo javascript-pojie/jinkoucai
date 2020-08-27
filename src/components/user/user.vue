@@ -11,19 +11,19 @@
                 <el-table-column prop="id" label="ID" align="center">
 
                 </el-table-column>
-                <el-table-column prop="areaCode" label="地区" align="center">
+                <el-table-column prop="userAccount" label="用户名" align="center">
 
                 </el-table-column>
-                <el-table-column prop="gsmc" label="公司名称" align="center">
+                <el-table-column prop="userType" label="账户类型" align="center">
 
                 </el-table-column>
-                <el-table-column prop="dlr" label="代理人名称" align="center">
+                <el-table-column prop="tel" label="手机号码" align="center">
 
                 </el-table-column>
-                <el-table-column prop="lxfs" label="联系方式" align="center">
+                <el-table-column prop="cdt" label="注册时间" align="center">
 
                 </el-table-column>
-                <el-table-column prop="fcbl" label="提成比例" align="center">
+                <el-table-column prop="fcbl" label="邀请码" align="center">
 
                 </el-table-column>
                 <el-table-column label="操作" align="center">
@@ -54,8 +54,29 @@
         methods:{
             getData(){
                 this.get('/edu-admin/user/list').then(r=>{
-                    console.log(r)
+                    if(r.data.code === 1){
+                        this.tableData = r.data.data
+                    }
                 })
+            },
+            onDelete(i,r){
+                this.$confirm('此操作将删除该用户, 是否继续?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    this.post('/edu-admin/user/delete',{ids:[r.id]}).then(r=>{
+                        if(r.data.code === 1){
+                            this.$message.success('删除成功')
+                        }
+                        this.getData()
+                    })
+                }).catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: '已取消删除'
+                    });
+                });
             }
         }
     }

@@ -12,7 +12,9 @@
 
                 </el-table-column>
                 <el-table-column prop="areaCode" label="地区" align="center">
-
+                    <template slot-scope="scope">
+                        {{areaCode[scope.row.areaCode]}}
+                    </template>
                 </el-table-column>
                 <el-table-column prop="gsmc" label="公司名称" align="center">
 
@@ -23,8 +25,10 @@
                 <el-table-column prop="lxfs" label="联系方式" align="center">
 
                 </el-table-column>
-                <el-table-column prop="fcbl" label="提成比例" align="center">
-
+                <el-table-column label="提成比例" align="center">
+                    <template slot-scope="scope">
+                        {{scope.row.fcbl}}%
+                    </template>
                 </el-table-column>
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
@@ -38,6 +42,8 @@
 </template>
 
 <script>
+    import code from "../../assets/js/areacode"
+
     export default {
         name: "agentlist",
         data(){
@@ -48,7 +54,8 @@
                     dlr:'',
                     lxfs:'',
                     fcbl:''
-                }]
+                }],
+                areaCode : code
             }
         },
         created(){

@@ -67,7 +67,7 @@
                         </template>
                         <el-menu-item index="/user">普通商城</el-menu-item>
                         <el-menu-item index="/examine">积分商城</el-menu-item>
-                        <el-menu-item index="/user"><拼></拼>团商城</el-menu-item>
+                        <el-menu-item index="/user">拼团商城</el-menu-item>
                     </el-submenu>
                     <el-submenu index="5">
                         <template slot="title">
@@ -93,6 +93,13 @@
                         <el-menu-item index="/user">充值订单查询</el-menu-item>
                         <el-menu-item index="/user">消费订单查询</el-menu-item>
                         <el-menu-item index="/user">提现审核</el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="8">
+                        <template slot="title">
+                            <i class="el-icon-bank-card"></i>
+                            <span>系统消息</span>
+                        </template>
+                        <el-menu-item index="/ordinaryMsg">普通消息</el-menu-item>
                     </el-submenu>
                 </el-menu>
             </el-aside>

@@ -53,6 +53,14 @@ export default new Router({
               path: '/user',
               name: 'user',
               component: resolve => require(['@/components/user/user'], resolve)
+          },{
+              path: '/ordinaryMsg',
+              name: 'ordinaryMsg',
+              component: resolve => require(['@/components/msg/ordinaryMsg'], resolve)
+          },{
+              path: '/ordinaryMsg/sendMsg',
+              name: 'sendMsg',
+              component: resolve => require(['@/components/msg/sendMsg'], resolve)
           }]
       },
       {
