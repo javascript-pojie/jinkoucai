@@ -41,6 +41,18 @@ export default new Router({
               path: '/material/add',
               name: 'addmaterial',
               component: resolve => require(['@/components/material/addmaterial'], resolve)
+          },{
+              path: '/forumclass',
+              name: 'forumclass',
+              component: resolve => require(['@/components/forum/forumclass'], resolve)
+          },{
+              path: '/forumclass/add',
+              name: 'addforumclass',
+              component: resolve => require(['@/components/forum/addforumclass'], resolve)
+          },{
+              path: '/user',
+              name: 'user',
+              component: resolve => require(['@/components/user/user'], resolve)
           }]
       },
       {
