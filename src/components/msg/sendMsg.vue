@@ -13,7 +13,7 @@
                     <el-form-item label="消息简介">
                         <el-input placeholder="请输入消息的标题" v-model="form.title"></el-input>
                     </el-form-item>
-
+<!--                 todo 询问富文本编辑器 -->
                     <el-form-item>
                         <el-button type="primary" @click="onSubmit">添加</el-button>
                     </el-form-item>

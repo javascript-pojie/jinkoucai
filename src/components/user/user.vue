@@ -53,6 +53,7 @@
         },
         methods:{
             getData(){
+                //todo 用户查询没有分页 按字段搜索
                 this.get('/edu-admin/user/list').then(r=>{
                     if(r.data.code === 1){
                         this.tableData = r.data.data

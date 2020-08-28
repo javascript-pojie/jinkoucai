@@ -20,7 +20,7 @@
             </el-header>
             <el-aside class="aside">
                 <el-menu
-                        :default-active="'/'+this.$route.path.split('/')[1]"
+                        :default-active="'/'+this.$route.fullPath.split('/')[1]"
                         @select="handleSelect"
                         active-text-color="#ffffff"
                         background-color="#20222A"
@@ -65,9 +65,9 @@
                             <i class="el-icon-shopping-bag-1"></i>
                             <span>商品管理</span>
                         </template>
-                        <el-menu-item index="/user">普通商城</el-menu-item>
-                        <el-menu-item index="/examine">积分商城</el-menu-item>
-                        <el-menu-item index="/user">拼团商城</el-menu-item>
+                        <el-menu-item index="/product?type=3">普通商城</el-menu-item>
+                        <el-menu-item index="/product?type=1">积分商城</el-menu-item>
+                        <el-menu-item index="/product?type=2">拼团商城</el-menu-item>
                     </el-submenu>
                     <el-submenu index="5">
                         <template slot="title">
@@ -96,7 +96,7 @@
                     </el-submenu>
                     <el-submenu index="8">
                         <template slot="title">
-                            <i class="el-icon-bank-card"></i>
+                            <i class="el-icon-chat-line-round"></i>
                             <span>系统消息</span>
                         </template>
                         <el-menu-item index="/ordinaryMsg">普通消息</el-menu-item>
